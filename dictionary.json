@@ -1,0 +1,16 @@
+{
+  "do_not_translate": [
+    "Create",
+    "Electroenergetics",
+    "Steam 'n' Rails"
+  ],
+  "force_translate": {
+    "Andesite": "安山岩",
+    "Brass": "真鍮",
+    "Copper": "銅",
+    "Mechanical": "メカニカル",
+    "Casing": "ケーシング",
+    "Shaft": "シャフト",
+    "Cogwheel": "歯車"
+  }
+}
