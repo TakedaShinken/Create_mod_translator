@@ -4,14 +4,14 @@ from pathlib import Path
 from core.extractor import extract_lang_and_metadata
 from core.parser import parse_lang_data, build_lang_data
 from core.generator import generate_resource_pack
-from translator.gemma import OpenAITranslator
+from translator.ai_translator import OpenAITranslator
 
 def main():
     parser = argparse.ArgumentParser(description="Minecraft Create Mod 日本語化リソースパック自動生成ツール")
     parser.add_argument("jar_file", help="翻訳対象のMod JARファイルのパス")
     parser.add_argument("-o", "--output", default="output_resource_pack.zip", help="出力するリソースパックのZIPファイル名")
     parser.add_argument("--api-url", default="http://localhost:11434/v1/chat/completions", help="OpenAI互換APIのエンドポイントURL (デフォルト: Ollama local API)")
-    parser.add_argument("--model", default="gemma", help="使用するモデル名")
+    parser.add_argument("--model", default="gemma", help="使用するモデル名 (例: gemma, phi, llama3, qwen など)")
     parser.add_argument("--api-key", default="dummy", help="APIキー (Ollama/LM Studioの場合は不要)")
     parser.add_argument("--limit", type=int, default=None, help="テスト用: 翻訳するキーの最大数を制限する")
     parser.add_argument("--lm-studio", action="store_true", help="LM Studioを利用する (API URLとモデル名を自動設定)")
